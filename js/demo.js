@@ -128,6 +128,7 @@
 					} else { //FF16a, 17a
 						video.src = stream;
 					}
+					console.log(stream);
 					return video.play();
 
 				} else {
