@@ -129,8 +129,7 @@
 						video.src = stream;
 					}
 					// console.log(stream);
-					return true;
-					// return video.play();
+					return video.play();
 
 				} else {
 					var vendorURL = window.URL || window.webkitURL;
