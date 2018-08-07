@@ -128,7 +128,6 @@
 						// video.src = stream;
 						video.srcObject = stream;
 					}
-					// console.log(stream);
 					return video.play();
 
 				} else {
