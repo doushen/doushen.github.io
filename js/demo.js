@@ -129,7 +129,7 @@
 						video.src = stream;
 					}
 					// console.log(stream);
-					video.muted();
+					video.muted = true;
 					return video.play();
 
 				} else {
