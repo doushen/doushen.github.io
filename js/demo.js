@@ -116,7 +116,6 @@
 		},
 
 		success: function (stream) {
-			debugger;
 			if (App.options.context === 'webrtc') {
 
 				var video = App.options.videoEl;
