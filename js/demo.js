@@ -45,9 +45,8 @@
 				});
 
 				this.addEvent('click', this.getStreamBtn, function () {
-					debugger;
 					App.success(App.options.videoEl.srcObject);
-					window.webkitRTCPeerConnection(App.options.videoEl.srcObject);
+					// window.webkitRTCPeerConnection(App.options.videoEl.srcObject);
 				});
 
 			} else {
