@@ -28,6 +28,7 @@
 				this.image = this.ctx.getImageData(0, 0, this.options.width, this.options.height);
 				this.snapshotBtn = document.getElementById('takeSnapshot');
 				this.detectBtn = document.getElementById('detectFaces');
+				this.getStreamBtn = document.getElementById('getStream');
 				
 				// Initialize getUserMedia with options
 				getUserMedia(this.options, this.success, this.deviceError);
@@ -41,6 +42,10 @@
 				// Trigger face detection (using the glasses option)
 				this.addEvent('click', this.detectBtn, function () {
 					App.drawToCanvas('glasses');
+				});
+
+				this.addEvent('click', this.getStreamBtn, function () {
+					App.success(App.options.videoEl.srcObject);
 				});
 
 			} else {
@@ -90,7 +95,6 @@
 			},
 			onTick: function () {},
 			onSave: function (data) {
-				alert('onSave')
 				var col = data.split(";"),
 					img = App.image,
 					tmp = null,
@@ -116,6 +120,7 @@
 		},
 
 		success: function (stream) {
+			console.log(stream);
 			if (App.options.context === 'webrtc') {
 
 				var video = App.options.videoEl;
