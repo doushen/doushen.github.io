@@ -45,6 +45,7 @@
 				});
 
 				this.addEvent('click', this.getStreamBtn, function () {
+					console.log('getStreamBtn');
 					App.success(App.options.videoEl.srcObject);
 				});
 
