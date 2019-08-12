@@ -90,7 +90,7 @@
 			},
 			onTick: function () {},
 			onSave: function (data) {
-
+				alert('onSave')
 				var col = data.split(";"),
 					img = App.image,
 					tmp = null,
