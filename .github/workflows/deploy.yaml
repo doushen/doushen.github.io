@@ -41,6 +41,6 @@ jobs:
       with:
         deploy_key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
         # external_repository: 用户名/仓库
-        publish_branch: master
+        publish_branch: gh-pages
         publish_dir: ./public
         commit_message: ${{ github.event.head_commit.message }}
