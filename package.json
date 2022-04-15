@@ -24,7 +24,7 @@
       "imageBed": "qiniu",
       "host": "radd3516e.hb-bkt.clouddn.com",
       "bucket": "yuque-hexo-img",
-      "region": "Zone_z0",
+      "region": "Zone_z1",
       "prefixKey": ""
     }
   },
