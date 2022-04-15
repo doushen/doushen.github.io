@@ -22,7 +22,7 @@
     "imgCdn": {
       "enabled": true,
       "imageBed": "qiniu",
-      "host": "radd3516e.hb-bkt.clouddn.com",
+      "host": "http://radd3516e.hb-bkt.clouddn.com",
       "bucket": "yuque-hexo-img",
       "region": "Zone_z1",
       "prefixKey": "pic"
