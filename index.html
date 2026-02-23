@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李雅男 | 前端开发者 & 创业者</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+    
+    header { text-align: center; margin-bottom: 60px; }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+    .tagline { color: #666; font-size: 1.2rem; margin-bottom: 20px; }
+    .bio { color: #555; max-width: 500px; margin: 0 auto 30px; }
+    
+    .social { display: flex; gap: 20px; justify-content: center; }
+    .social a {
+      color: #333;
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .social a:hover { background: #333; color: #fff; }
+    
+    section { margin-bottom: 50px; }
+    h2 { font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+    
+    .projects { display: grid; gap: 20px; }
+    .project {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+    .project:hover { transform: translateY(-2px); }
+    .project h3 { margin-bottom: 8px; }
+    .project h3 a { color: #333; text-decoration: none; }
+    .project h3 a:hover { color: #0066cc; }
+    .project p { color: #666; font-size: 0.95rem; }
+    .project .tags { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      background: #f0f0f0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+    
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill {
+      background: #fff;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    
+    footer { text-align: center; color: #999; font-size: 0.9rem; margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>李雅男</h1>
+      <p class="tagline">前端开发者 · 20年经验 · 创业者</p>
+      <p class="bio">"To accomplish great things, we must not only act, but also dream."</p>
+      <div class="social">
+        <a href="https://github.com/doushen" target="_blank">GitHub</a>
+        <a href="mailto:ayan@email.com" target="_blank">Email</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>🛠 技能</h2>
+      <div class="skills">
+        <span class="skill">TypeScript</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">前端工程化</span>
+        <span class="skill">AIoT</span>
+        <span class="skill">Cordova</span>
+        <span class="skill">浏览器插件</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>🚀 项目</h2>
+      <div class="projects">
+        <div class="project">
+          <h3><a href="https://github.com/doushen/CommentPulse" target="_blank">CommentPulse</a></h3>
+          <p>B站评论分析浏览器插件 - 实时捕捉视频评论情绪，分析热点趋势</p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">浏览器插件</span>
+            <span class="tag">数据分析</span>
+          </div>
+        </div>
+        
+        <div class="project">
+          <h3><a href="https://github.com/doushen/frontbee-AI" target="_blank">frontbee-AI</a></h3>
+          <p>前端开发者AI效率工具套件 - 用AI加速前端开发工作流</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">AI工具</span>
+            <span class="tag">效率提升</span>
+          </div>
+        </div>
+        
+        <div class="project">
+          <h3><a href="https://github.com/doushen/cordova-plugin-xxx" target="_blank">Cordova 插件系列</a></h3>
+          <p>多个Cordova原生插件，覆盖Toast、Keyboard、StatusBar等常用功能</p>
+          <div class="tags">
+            <span class="tag">Cordova</span>
+            <span class="tag">Android</span>
+            <span class="tag">iOS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>📍 位置</h2>
+      <p>北京 🇨🇳</p>
+    </section>
+
+    <footer>
+      <p>© 2026 李雅男 · Build with ❤️</p>
+    </footer>
+  </div>
+</body>
+</html>
