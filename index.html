@@ -3,84 +3,418 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="李雅男 - 20年经验的前端开发者、创业者，专注AIoT和前端工程化">
   <title>李雅男 | 前端开发者 & 创业者</title>
   <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-hover: #1a1a25;
+      --text: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --primary: #60a5fa;
+      --primary-glow: rgba(96, 165, 250, 0.3);
+      --border: #27272a;
+      --gradient-1: #60a5fa;
+      --gradient-2: #a78bfa;
+      --gradient-3: #f472b6;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #fafafa;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-    
-    header { text-align: center; margin-bottom: 60px; }
-    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
-    .tagline { color: #666; font-size: 1.2rem; margin-bottom: 20px; }
-    .bio { color: #555; max-width: 500px; margin: 0 auto 30px; }
-    
-    .social { display: flex; gap: 20px; justify-content: center; }
-    .social a {
-      color: #333;
-      text-decoration: none;
-      padding: 8px 16px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      transition: all 0.2s;
+
+    /* Animated background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(167, 139, 250, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
     }
-    .social a:hover { background: #333; color: #fff; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 80px 24px; }
     
-    section { margin-bottom: 50px; }
-    h2 { font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
-    
-    .projects { display: grid; gap: 20px; }
-    .project {
-      background: #fff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: transform 0.2s;
+    /* Header */
+    header { 
+      text-align: center; 
+      margin-bottom: 80px;
+      animation: fadeInUp 0.8s ease-out;
     }
-    .project:hover { transform: translateY(-2px); }
-    .project h3 { margin-bottom: 8px; }
-    .project h3 a { color: #333; text-decoration: none; }
-    .project h3 a:hover { color: #0066cc; }
-    .project p { color: #666; font-size: 0.95rem; }
-    .project .tags { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      background: #f0f0f0;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: #666;
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 8px 32px var(--primary-glow);
+      transition: transform 0.3s ease;
     }
-    
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill {
-      background: #fff;
-      padding: 10px 16px;
+
+    .avatar:hover { transform: scale(1.05); }
+
+    h1 { 
+      font-size: 3rem; 
+      font-weight: 800; 
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline { 
+      color: var(--text-secondary); 
+      font-size: 1.25rem; 
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .bio { 
+      color: var(--text-secondary); 
+      max-width: 500px; 
+      margin: 0 auto 32px;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.9rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
     }
-    
-    footer { text-align: center; color: #999; font-size: 0.9rem; margin-top: 60px; }
+
+    .highlight::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Social links */
+    .social { 
+      display: flex; 
+      gap: 12px; 
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 12px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+
+    .social a:hover { 
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(96, 165, 250, 0.2);
+    }
+
+    /* Sections */
+    section { 
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+
+    h2 { 
+      font-size: 1.5rem; 
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    /* Skills */
+    .skills { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+    }
+
+    .skill {
+      background: var(--surface);
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+
+    .skill:hover {
+      border-color: var(--primary);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Projects */
+    .projects { display: grid; gap: 16px; }
+
+    .project {
+      background: var(--surface);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project:hover { 
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .project:hover::before { opacity: 1; }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 16px;
+    }
+
+    .project h3 { 
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project h3 a { 
+      color: var(--text); 
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project h3 a:hover { 
+      color: var(--primary);
+    }
+
+    .project p { 
+      color: var(--text-secondary); 
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .project .tags { 
+      display: flex; 
+      gap: 8px; 
+      flex-wrap: wrap; 
+    }
+
+    .tag {
+      background: rgba(96, 165, 250, 0.1);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .project-link {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      transition: color 0.2s ease;
+    }
+
+    .project-link:hover {
+      color: var(--primary);
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    /* Contact */
+    .contact-info {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--text-secondary);
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Footer */
+    footer { 
+      text-align: center; 
+      color: var(--text-secondary); 
+      font-size: 0.9rem; 
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      h1 { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+      .container { padding: 60px 20px; }
+      .project-header { flex-direction: column; gap: 8px; }
+    }
   </style>
 </head>
 <body>
+  <div class="bg-gradient"></div>
+  
   <div class="container">
     <header>
+      <div class="avatar">李</div>
       <h1>李雅男</h1>
       <p class="tagline">前端开发者 · 20年经验 · 创业者</p>
       <p class="bio">"To accomplish great things, we must not only act, but also dream."</p>
-      <div class="social">
-        <a href="https://github.com/doushen" target="_blank">GitHub</a>
-        <a href="mailto:ynlyn@foxmail.com" target="_blank">Email</a>
+      <div class="highlight">北京 · 开放合作</div>
+      
+      <div class="social" style="margin-top: 32px;">
+        <a href="https://github.com/doushen" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:ynlyn@foxmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
       </div>
     </header>
 
+    <!-- Stats -->
     <section>
-      <h2>🛠 技能</h2>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value">20+</span>
+          <span class="stat-label">年开发经验</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">18</span>
+          <span class="stat-label">开源项目</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">6</span>
+          <span class="stat-label">GitHub Followers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>🛠 技能栈</h2>
       <div class="skills">
         <span class="skill">TypeScript</span>
         <span class="skill">JavaScript</span>
@@ -88,51 +422,82 @@
         <span class="skill">AIoT</span>
         <span class="skill">Cordova</span>
         <span class="skill">浏览器插件</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">数据分析</span>
+        <span class="skill">AI工具</span>
       </div>
     </section>
 
+    <!-- Projects -->
     <section>
-      <h2>🚀 项目</h2>
+      <h2>🚀 精选项目</h2>
       <div class="projects">
         <div class="project">
-          <h3><a href="https://github.com/doushen/CommentPulse" target="_blank">CommentPulse</a></h3>
-          <p>B站评论分析浏览器插件 - 实时捕捉视频评论情绪，分析热点趋势</p>
+          <div class="project-header">
+            <h3>
+              <a href="https://github.com/doushen/CommentPulse" target="_blank" rel="noopener">CommentPulse</a>
+            </h3>
+            <a href="https://github.com/doushen/CommentPulse" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <p>B站评论分析浏览器插件 - 实时捕捉视频评论情绪，分析热点趋势，帮助创作者洞察观众反馈</p>
           <div class="tags">
             <span class="tag">TypeScript</span>
             <span class="tag">浏览器插件</span>
             <span class="tag">数据分析</span>
+            <span class="tag">情感分析</span>
           </div>
         </div>
         
         <div class="project">
-          <h3><a href="https://github.com/doushen/frontbee-AI" target="_blank">frontbee-AI</a></h3>
-          <p>前端开发者AI效率工具套件 - 用AI加速前端开发工作流</p>
+          <div class="project-header">
+            <h3>
+              <a href="https://github.com/doushen/frontbee-AI" target="_blank" rel="noopener">frontbee-AI</a>
+            </h3>
+            <a href="https://github.com/doushen/frontbee-AI" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <p>前端开发者AI效率工具套件 - 用AI加速前端开发工作流，代码生成、重构、Review一站式解决方案</p>
           <div class="tags">
             <span class="tag">JavaScript</span>
             <span class="tag">AI工具</span>
             <span class="tag">效率提升</span>
+            <span class="tag">开发者工具</span>
           </div>
         </div>
         
         <div class="project">
-          <h3><a href="https://github.com/doushen/cordova-plugin-xxx" target="_blank">Cordova 插件系列</a></h3>
-          <p>多个Cordova原生插件，覆盖Toast、Keyboard、StatusBar等常用功能</p>
+          <div class="project-header">
+            <h3>
+              <a href="https://github.com/doushen/cordova-plugin-xxx" target="_blank" rel="noopener">Cordova 插件系列</a>
+            </h3>
+            <a href="https://github.com/doushen/cordova-plugin-xxx" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <p>多个Cordova原生插件，覆盖Toast、Keyboard、StatusBar等常用功能，帮助开发者快速构建混合应用</p>
           <div class="tags">
             <span class="tag">Cordova</span>
             <span class="tag">Android</span>
             <span class="tag">iOS</span>
+            <span class="tag">原生开发</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact -->
     <section>
-      <h2>📍 位置</h2>
-      <p>北京 🇨🇳</p>
+      <h2>📍 联系我</h2>
+      <div class="contact-info">
+        <span>📍 北京，中国</span>
+        <span>📧 ynlyn@foxmail.com</span>
+        <span>💼 开放合作机会</span>
+      </div>
     </section>
 
     <footer>
-      <p>© 2026 李雅男 · Build with ❤️</p>
+      <p>© 2026 李雅男 · Built with passion & code</p>
+      <p style="margin-top: 8px; font-size: 0.8rem;">
+        <a href="https://github.com/doushen/doushen.github.io" target="_blank" rel="noopener">View Source</a>
+      </p>
     </footer>
   </div>
 </body>
