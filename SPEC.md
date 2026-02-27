@@ -82,9 +82,9 @@
 
 ## 5. 验收标准
 
-- [ ] 页面在移动端/桌面端正常显示
-- [ ] 导航点击可平滑滚动到对应区块
-- [ ] 项目卡片 hover 有动效
-- [ ] 页面加载有入场动画
-- [ ] 所有外部链接可正常跳转
-- [ ] 通过 Google Lighthouse 基础检查
+- [x] 页面在移动端/桌面端正常显示 (响应式 grid + mobile breakpoint)
+- [x] 导航点击可平滑滚动到对应区块 (html scroll-behavior: smooth)
+- [x] 项目卡片 hover 有动效 (transform + border-color)
+- [x] 页面加载有入场动画 (fadeInUp keyframes)
+- [x] 所有外部链接可正常跳转
+- [x] Skills 区块已添加

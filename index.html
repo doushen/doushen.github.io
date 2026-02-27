@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="李雅男 - 20年经验的前端开发者、创业者，专注 AIoT 和前端工程化">
+  <meta name="description" content="李雅男 - 20年经验的前端开发者，探索 AI、Apps、Games 与日常创造">
   <title>李雅男 | Curious Code, Wild Pixels</title>
   <style>
     :root {
       --bg: #0a0a0f;
       --surface: #12121a;
-      --surface-hover: #1a1a25;
       --text: #e4e4e7;
-      --text-secondary: #a1a1aa;
+      --text-secondary: #71717a;
       --primary: #60a5fa;
-      --accent: #f472b6;
       --border: #27272a;
     }
 
@@ -23,126 +21,99 @@
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
       color: var(--text);
       background: var(--bg);
       min-height: 100vh;
     }
 
-    .bg-gradient {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(244, 114, 182, 0.06) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
     
     /* Hero */
     header { 
       text-align: center; 
-      margin-bottom: 60px;
-      animation: fadeInUp 0.8s ease-out;
+      margin-bottom: 80px;
+      animation: fadeIn 1s ease-out;
     }
 
     h1 { 
-      font-size: 2.5rem; 
-      font-weight: 800; 
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      font-size: 2.2rem; 
+      font-weight: 700; 
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
     }
 
     .tagline { 
       color: var(--text-secondary); 
-      font-size: 1.2rem; 
+      font-size: 1.1rem; 
       margin-bottom: 32px;
     }
 
     .nav {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       justify-content: center;
-      flex-wrap: wrap;
     }
 
     .nav a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: color 0.2s;
     }
 
-    .nav a:hover { color: var(--primary); }
+    .nav a:hover { color: var(--text); }
 
     /* Sections */
-    section { 
-      margin-bottom: 48px;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
+    section { margin-bottom: 56px; }
 
     h2 { 
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       color: var(--text-secondary);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     /* About */
     .about {
       color: var(--text-secondary);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.8;
     }
 
-    .about p { margin-bottom: 16px; }
+    .about p { margin-bottom: 14px; }
+    .about p:last-child { margin-bottom: 0; }
 
     /* Projects Grid */
     .grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-      gap: 16px; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 12px; 
     }
 
     .card {
       background: var(--surface);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       text-decoration: none;
       color: var(--text);
-      display: block;
     }
 
     .card:hover { 
       border-color: var(--primary);
-      transform: translateY(-2px);
     }
 
     .card h3 { 
-      font-size: 1rem; 
-      margin-bottom: 8px;
+      font-size: 0.95rem; 
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .card p { 
-      font-size: 0.85rem; 
-      color: var(--text-secondary);
-    }
-
-    .card .tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      background: var(--surface-hover);
-      border-radius: 4px;
-      margin-top: 12px;
+      font-size: 0.8rem; 
       color: var(--text-secondary);
     }
 
@@ -150,23 +121,15 @@
     .skills { 
       display: flex; 
       flex-wrap: wrap; 
-      gap: 10px; 
+      gap: 8px; 
     }
 
     .skill {
       background: var(--surface);
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-    }
-
-    .skill:hover {
-      border-color: var(--primary);
-      background: var(--surface-hover);
-      transform: translateY(-1px);
     }
 
     /* Footer */
@@ -174,31 +137,28 @@
       text-align: center;
       padding: 40px 0;
       color: var(--text-secondary);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     footer a { color: var(--primary); text-decoration: none; }
 
     /* Responsive */
-    @media (max-width: 640px) {
-      h1 { font-size: 1.8rem; }
-      .tagline { font-size: 1rem; }
+    @media (max-width: 540px) {
+      h1 { font-size: 1.6rem; }
       .grid { grid-template-columns: 1fr; }
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="bg-gradient"></div>
-  
   <div class="container">
     <header>
       <h1>Curious Code, Wild Pixels</h1>
-      <p class="tagline">探索 AI、Apps、Games 与日常创造的无限可能</p>
+      <p class="tagline">探索 AI、Apps、Games 与日常创造，让每个实验按自己的节奏展开</p>
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -210,9 +170,9 @@
     <section id="about">
       <h2>About Me</h2>
       <div class="about">
-        <p>20 年经验的前端开发者，热爱技术创新与产品落地。</p>
-        <p>专注 AIoT、前端工程化、Flutter 开发，正在探索 AI 与前端的深度融合。</p>
-        <p>相信工具的普及让每个人都能成为创造者，乐于用代码实现有趣的想法。</p>
+        <p>20 年前端老兵，在工作和家庭之余，挤出时间做些有趣的小项目。</p>
+        <p>热爱将好奇心转化为可见、可交互的作品。这个工具普及的时代是礼物，我乐意用每一刻空闲学习和构建自己的小世界。</p>
+        <p>专注 AIoT、前端工程化、Flutter 开发，探索 AI 与前端的深度融合。</p>
       </div>
     </section>
 
@@ -231,27 +191,23 @@
     </section>
 
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2>Projects</h2>
       <div class="grid">
         <a href="https://github.com/doushen/frontbee-AI" target="_blank" class="card">
           <h3>🐝 frontbee-AI</h3>
           <p>蜂巢 - 前端开发者 AI 效率工具套件</p>
-          <span class="tag">AI · 前端</span>
         </a>
         <a href="https://github.com/doushen/CommentPulse" target="_blank" class="card">
           <h3>💬 CommentPulse</h3>
-          <p>B站评论分析浏览器插件 - 实时分析视频评论情绪</p>
-          <span class="tag">浏览器插件</span>
+          <p>B站评论情绪分析浏览器插件</p>
         </a>
         <a href="https://github.com/doushen/room-webview" target="_blank" class="card">
           <h3>📱 Room WebView</h3>
           <p>Flutter WebView Android 应用</p>
-          <span class="tag">Flutter · Android</span>
         </a>
         <a href="https://github.com/doushen/quant-trading" target="_blank" class="card">
           <h3>📈 Quant Trading</h3>
-          <p>量化交易策略研究与回测系统</p>
-          <span class="tag">Python · 量化</span>
+          <p>量化交易策略研究与回测</p>
         </a>
       </div>
     </section>
