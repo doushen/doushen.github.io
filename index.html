@@ -146,6 +146,29 @@
       color: var(--text-secondary);
     }
 
+    /* Skills */
+    .skills { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+    }
+
+    .skill {
+      background: var(--surface);
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      color: var(--text-secondary);
+    }
+
+    .skill:hover {
+      border-color: var(--primary);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -155,6 +178,13 @@
     }
 
     footer a { color: var(--primary); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.8rem; }
+      .tagline { font-size: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -171,6 +201,7 @@
       <p class="tagline">探索 AI、Apps、Games 与日常创造的无限可能</p>
       <nav class="nav">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="https://github.com/doushen" target="_blank">GitHub</a>
       </nav>
@@ -182,6 +213,20 @@
         <p>20 年经验的前端开发者，热爱技术创新与产品落地。</p>
         <p>专注 AIoT、前端工程化、Flutter 开发，正在探索 AI 与前端的深度融合。</p>
         <p>相信工具的普及让每个人都能成为创造者，乐于用代码实现有趣的想法。</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">Frontend</span>
+        <span class="skill">Flutter</span>
+        <span class="skill">AIoT</span>
+        <span class="skill">React</span>
+        <span class="skill">Vue</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">Python</span>
+        <span class="skill">Node.js</span>
       </div>
     </section>
 
