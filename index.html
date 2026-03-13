@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="李雅男 - 20年经验的前端开发者，探索 AI、Apps、Games 与日常创造">
-  <title>李雅男 | Curious Code, Wild Pixels</title>
+  <meta name="description" content="李雅男 - 20年全栈开发经验，AIoT/前端创业中 | 北京">
+  <title>李雅男 | Lynn</title>
   <style>
     :root {
-      --bg: #0a0a0f;
-      --surface: #12121a;
-      --text: #e4e4e7;
-      --text-secondary: #71717a;
-      --primary: #60a5fa;
+      --bg: #0c0c0c;
+      --surface: #181818;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --primary: #f43f5e;
+      --primary-dim: #f43f5e33;
       --border: #27272a;
     }
 
@@ -29,7 +30,7 @@
 
     .container { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
     
-    /* Hero */
+    /* Header */
     header { 
       text-align: center; 
       margin-bottom: 80px;
@@ -37,28 +38,30 @@
     }
 
     h1 { 
-      font-size: 2.2rem; 
+      font-size: 2rem; 
       font-weight: 700; 
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       letter-spacing: -0.03em;
     }
 
-    .tagline { 
-      color: var(--text-secondary); 
-      font-size: 1.1rem; 
+    .bio { 
+      color: var(--text-muted); 
+      font-size: 0.95rem; 
       margin-bottom: 32px;
+      line-height: 1.8;
     }
 
     .nav {
       display: flex;
       gap: 20px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .nav a {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: color 0.2s;
     }
 
@@ -68,17 +71,17 @@
     section { margin-bottom: 56px; }
 
     h2 { 
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin-bottom: 24px;
     }
 
     /* About */
     .about {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-size: 1rem;
       line-height: 1.8;
     }
 
@@ -94,8 +97,8 @@
 
     .card {
       background: var(--surface);
-      padding: 20px;
-      border-radius: 10px;
+      padding: 18px;
+      border-radius: 12px;
       border: 1px solid var(--border);
       transition: all 0.2s ease;
       text-decoration: none;
@@ -107,14 +110,15 @@
     }
 
     .card h3 { 
-      font-size: 0.95rem; 
+      font-size: 0.9rem; 
       font-weight: 600;
       margin-bottom: 6px;
     }
 
     .card p { 
-      font-size: 0.8rem; 
-      color: var(--text-secondary);
+      font-size: 0.75rem; 
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* Skills */
@@ -129,23 +133,25 @@
       padding: 8px 14px;
       border-radius: 6px;
       font-size: 0.8rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 40px 0;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 0.8rem;
     }
 
     footer a { color: var(--primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
     /* Responsive */
     @media (max-width: 540px) {
       h1 { font-size: 1.6rem; }
       .grid { grid-template-columns: 1fr; }
+      .bio { font-size: 0.85rem; }
     }
 
     @keyframes fadeIn {
@@ -157,12 +163,16 @@
 <body>
   <div class="container">
     <header>
-      <h1>Curious Code, Wild Pixels</h1>
-      <p class="tagline">探索 AI、Apps、Games 与日常创造，让每个实验按自己的节奏展开</p>
+      <h1>Hi, I'm Lynn 👋</h1>
+      <p class="bio">
+        🏢 20年全栈开发经验 | AIoT/前端创业中<br>
+        嵌入式/Node.js/AI Agent<br>
+        📍 北京 | 🎯 解决问题
+      </p>
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="https://github.com/doushen" target="_blank">GitHub</a>
       </nav>
     </header>
@@ -170,50 +180,60 @@
     <section id="about">
       <h2>About Me</h2>
       <div class="about">
-        <p>20 年前端老兵，在工作和家庭之余，挤出时间做些有趣的小项目。</p>
+        <p>20 年全栈开发老兵，在工作和家庭之余，挤出时间做些有趣的小项目。</p>
         <p>热爱将好奇心转化为可见、可交互的作品。这个工具普及的时代是礼物，我乐意用每一刻空闲学习和构建自己的小世界。</p>
-        <p>专注 AIoT、前端工程化、Flutter 开发，探索 AI 与前端的深度融合。</p>
+        <p>专注 AIoT、前端工程化、Flutter/嵌入式开发，探索 AI 与前端的深度融合。</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Top Projects</h2>
+      <div class="grid">
+        <a href="https://github.com/doushen/frontbee-AI" target="_blank" class="card">
+          <h3>🐝 frontbee-AI</h3>
+          <p>前端开发者 AI 效率工具套件</p>
+        </a>
+        <a href="https://github.com/doushen/CommentPulse" target="_blank" class="card">
+          <h3>💬 CommentPulse</h3>
+          <p>B站评论情绪分析浏览器插件</p>
+        </a>
+        <a href="https://github.com/doushen/claw-langgraph-project" target="_blank" class="card">
+          <h3>🤖 claw-langgraph</h3>
+          <p>AI Agent 自动化项目</p>
+        </a>
+        <a href="https://github.com/doushen/cordova-plugin-flutter" target="_blank" class="card">
+          <h3>📱 cordova-plugin-flutter</h3>
+          <p>Cordova + Flutter 混合开发</p>
+        </a>
+        <a href="https://github.com/doushen/cordova-plugin-open-keyboard" target="_blank" class="card">
+          <h3>⌨️ cordova-plugin-keyboard</h3>
+          <p>Cordova 原生键盘插件</p>
+        </a>
+        <a href="https://github.com/doushen/eStudy" target="_blank" class="card">
+          <h3>📚 eStudy</h3>
+          <p>学习管理系统</p>
+        </a>
       </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills">
-        <span class="skill">Frontend</span>
-        <span class="skill">Flutter</span>
-        <span class="skill">AIoT</span>
+        <span class="skill">TypeScript</span>
         <span class="skill">React</span>
         <span class="skill">Vue</span>
-        <span class="skill">TypeScript</span>
-        <span class="skill">Python</span>
         <span class="skill">Node.js</span>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <a href="https://github.com/doushen/frontbee-AI" target="_blank" class="card">
-          <h3>🐝 frontbee-AI</h3>
-          <p>蜂巢 - 前端开发者 AI 效率工具套件</p>
-        </a>
-        <a href="https://github.com/doushen/CommentPulse" target="_blank" class="card">
-          <h3>💬 CommentPulse</h3>
-          <p>B站评论情绪分析浏览器插件</p>
-        </a>
-        <a href="https://github.com/doushen/room-webview" target="_blank" class="card">
-          <h3>📱 Room WebView</h3>
-          <p>Flutter WebView Android 应用</p>
-        </a>
-        <a href="https://github.com/doushen/quant-trading" target="_blank" class="card">
-          <h3>📈 Quant Trading</h3>
-          <p>量化交易策略研究与回测</p>
-        </a>
+        <span class="skill">Flutter</span>
+        <span class="skill">ESP32</span>
+        <span class="skill">Arduino</span>
+        <span class="skill">AI Agent</span>
+        <span class="skill">Python</span>
+        <span class="skill">Cordova</span>
       </div>
     </section>
 
     <footer>
-      <p>© 2026 <a href="https://github.com/doushen">@doushen</a></p>
+      <p>© 2026 <a href="https://github.com/doushen">@doushen</a> · <a href="mailto:ynlyn@foxmail.com">ynlyn@foxmail.com</a></p>
     </footer>
   </div>
 </body>

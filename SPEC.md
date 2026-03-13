@@ -1,90 +1,152 @@
-# doushen.github.io 重构规范
+# doushen.github.io 个人主页规范
 
 ## 1. 项目概述
 
-- **项目名称**: doushen.github.io 个人主页
-- **项目类型**: 静态个人网站
-- **核心功能**: 展示个人简介、技能、项目作品集
+- **项目名称**: doushen.github.io
+- **类型**: 静态个人网站 (GitHub Pages)
+- **核心**: 展示个人简介、技能、项目
 - **目标用户**: 潜在雇主、合作者、技术爱好者
 
-## 2. UI/UX 规范
+---
+
+## 2. Bio (个人简介)
+
+```
+🏢 20年全栈开发经验 | AIoT/前端创业中 | 嵌入式/Node.js/AI Agent
+📍 北京 | 🎯 解决问题
+```
+
+字符数: 113 (≤150 ✓)
+
+---
+
+## 3. 置顶项目 (6个)
+
+| # | 项目 | 描述 | 链接 |
+|---|------|------|------|
+| 1 | 🐝 frontbee-AI | 前端开发者 AI 效率工具套件 | https://github.com/doushen/frontbee-AI |
+| 2 | 💬 CommentPulse | B站评论情绪分析浏览器插件 | https://github.com/doushen/CommentPulse |
+| 3 | 🤖 claw-langgraph | AI Agent 自动化项目 | https://github.com/doushen/claw-langgraph-project |
+| 4 | 📱 cordova-plugin-flutter | Cordova + Flutter 混合开发 | https://github.com/doushen/cordova-plugin-flutter |
+| 5 | ⌨️ cordova-plugin-keyboard | Cordova 原生键盘插件 | https://github.com/doushen/cordova-plugin-open-keyboard |
+| 6 | 📚 eStudy | 学习管理系统 | https://github.com/doushen/eStudy |
+
+---
+
+## 4. UI/UX 规范
 
 ### 布局结构
 
-- **Header**: 固定顶部导航（可选）
-- **Hero**: 全屏欢迎区，标题 + 副标题 + 导航链接
-- **About**: 个人简介区块
-- **Projects**: 项目作品网格展示
-- **Skills**: 技能标签展示
-- **Footer**: 版权信息 + 社交链接
+```
+┌─────────────────────────────┐
+│           Header            │
+│     "Hi, I'm Lynn 👋"       │
+│          [Bio]              │
+│      [Nav: About|Projects] │
+├─────────────────────────────┤
+│           About             │
+│       个人简介段落           │
+├─────────────────────────────┤
+│         Top Projects        │
+│   [Card][Card][Card]        │
+│   [Card][Card][Card]        │
+├─────────────────────────────┤
+│           Skills            │
+│    [Tag][Tag][Tag][Tag]    │
+├─────────────────────────────┤
+│           Footer            │
+│      © @doushen | Email    │
+└─────────────────────────────┘
+```
 
 ### 响应式断点
 
-- Mobile: < 640px（单列布局）
-- Tablet: 640px - 1024px（双列布局）
-- Desktop: > 1024px（三列布局）
+| 断点 | 宽度 | 布局 |
+|------|------|------|
+| Mobile | < 540px | 单列 |
+| Desktop | ≥ 540px | 双列 |
 
-### 视觉设计
-
-#### 色彩系统
+### 色彩系统 (Rose & Slate)
 
 ```css
---bg: #0a0a0f;           /* 深色背景 */
---surface: #12121a;      /* 卡片背景 */
---surface-hover: #1a1a25;
---text: #e4e4e7;         /* 主文字 */
---text-secondary: #a1a1aa;
---primary: #60a5fa;      /* 主色调-蓝 */
---accent: #f472b6;       /* 强调色-粉 */
---border: #27272a;
+:root {
+  --bg: #0c0c0c;           /* 背景: 近黑 */
+  --surface: #181818;       /* 卡片: 深灰 */
+  --text: #fafafa;         /* 主文字: 近白 */
+  --text-muted: #a1a1aa;   /* 次要文字: 灰 */
+  --primary: #f43f5e;       /* 主色: 玫瑰红 */
+  --primary-dim: #f43f5e33; /* 主色透明 */
+  --border: #27272a;       /* 边框: 暗灰 */
+}
 ```
 
-#### 字体
+### 字体
 
-- 标题: Inter, 700-800 weight
-- 正文: Inter, 400-500 weight
-- 字号: 2.5rem (h1), 1.2rem (tagline), 1rem (body)
+- **标题**: Inter, 700, 2rem
+- **正文**: Inter, 400, 0.95rem
+- **标签**: Inter, 500, 0.8rem
 
-#### 动效
+### 间距
 
-- fadeInUp 入场动画
-- Card hover 上浮 + 边框高亮
-- 渐变背景光晕效果
+- 容器最大宽度: 720px
+- 区块间距: 56px
+- 卡片内边距: 18px
+- 卡片间距: 12px
 
-### 组件
+### 动效
 
-1. **Nav**: 导航链接，hover 时变色
-2. **HeroSection**: 标题 + 副标题
-3. **ProjectCard**: 项目卡片，hover 动效
-4. **SkillTag**: 技能标签
-5. **SocialLink**: 社交链接按钮
+- **页面加载**: fadeIn 1s ease-out
+- **卡片悬停**: border-color 过渡 0.2s
+- **链接悬停**: color 过渡 0.2s
+- **滚动行为**: 平滑滚动 (scroll-behavior: smooth)
 
-## 3. 功能规范
+---
 
-### 核心功能
+## 5. Skills 列表
 
-1. **导航跳转**: 点击导航平滑滚动到对应区块
-2. **项目展示**: 展示 GitHub 代表性项目，带链接
-3. **外部链接**: GitHub、B站等社交链接
-4. **响应式适配**: 移动端/桌面端自适应
+```
+TypeScript, React, Vue, Node.js, Flutter, ESP32, Arduino, AI Agent, Python, Cordova
+```
 
-### 用户交互
+---
 
-- Hover 反馈（卡片、链接）
-- 平滑滚动
-- 页面加载动画
+## 6. 组件规范
 
-## 4. 技术栈
+### Header
+- 标题: "Hi, I'm Lynn 👋"
+- Bio: 三行简介
+- 导航: About | Projects | GitHub
 
-- 纯 HTML + CSS（无框架）
-- 原生 JavaScript（可选）
-- GitHub Pages 部署
+### ProjectCard
+- 背景: var(--surface)
+- 边框: 1px solid var(--border)
+- 圆角: 12px
+- 悬停: border-color → var(--primary)
 
-## 5. 验收标准
+### SkillTag
+- 背景: var(--surface)
+- 圆角: 6px
+- 内边距: 8px 14px
 
-- [x] 页面在移动端/桌面端正常显示 (响应式 grid + mobile breakpoint)
-- [x] 导航点击可平滑滚动到对应区块 (html scroll-behavior: smooth)
-- [x] 项目卡片 hover 有动效 (transform + border-color)
-- [x] 页面加载有入场动画 (fadeInUp keyframes)
-- [x] 所有外部链接可正常跳转
-- [x] Skills 区块已添加
+### Footer
+- 版权 + GitHub 链接 + Email
+
+---
+
+## 7. 验收标准
+
+- [ ] Bio 显示正确 (≤150字符)
+- [ ] 6 个置顶项目
+- [ ] 移动端单列布局
+- [ ] 桌面端双列布局
+- [ ] 平滑滚动
+- [ ] Card hover 边框高亮
+- [ ] fadeIn 入场动画
+- [ ] 外部链接正常跳转
+
+---
+
+## 8. 文件
+
+- `index.html` - 主页
+- `SPEC.md` - 本规范
